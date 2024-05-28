@@ -1,0 +1,49 @@
+{
+  "name": "antd-vue-dynamic-form",
+  "version": "0.0.4",
+  "type": "module",
+  "description": "Dynamic form implementation based on ant-design-vue",
+  "author": "terroristjs",
+  "homepage": "https://github.com/copyingMachine/antd-vue-dynamic-form",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/copyingMachine/antd-vue-dynamic-form.git"
+  },
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "vuedraggable": "^4.0.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
+    "ant-design-vue": "^4.1.2",
+    "less": "^4.2.0",
+    "unplugin-auto-import": "^0.10.3",
+    "unplugin-vue-components": "^0.27.0",
+    "uuid": "^9.0.1",
+    "vite": "^5.1.4",
+    "vue": "^3.4.19"
+  },
+  "peerDependencies": {
+    "ant-design-vue": ">=3.1.2",
+    "vue": ">=3.2.0"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.umd.cjs"
+    },
+    "./*": "./*"
+  },
+  "keywords": [
+    "vue",
+    "vue3",
+    "ant",
+    "design",
+    "antd",
+    "vueComponent"
+  ]
+}
