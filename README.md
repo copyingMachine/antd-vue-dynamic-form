@@ -2,7 +2,6 @@
 Dynamic form implementation based on ant-design-vue.<br>
 [github ](https://github.com/copyingMachine/antd-vue-dynamic-form#readme)<br>
 [preview](https://copyingmachine.github.io/antd-vue-dynamic-form)
-
 ## Using npm or yarn
 
 
