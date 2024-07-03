@@ -371,9 +371,11 @@
             <a-radio-button value="blur,change">All</a-radio-button>
           </a-radio-group>
         </a-form-item> -->
-
-        <a-form-item label="枚举类型">
-          <a-input v-model:value="data.options.rules.enum" />
+        <a-form-item label="校验文案">
+          <a-input v-model:value="data.options.rules.message" />
+        </a-form-item>
+        <a-form-item label="枚举类型" v-if="data.options.rules.type === 'enum'">
+          <a-input v-model:value="data.options.rules.enum" placeHolder="多个值以,分割(A,B,C)" />
         </a-form-item>
 
         <a-form-item label="字段长度">
@@ -383,17 +385,12 @@
         <a-form-item label="最大长度">
           <a-input v-model:value.number="data.options.rules.max" />
         </a-form-item>
-
-        <a-form-item label="校验文案">
-          <a-input v-model:value="data.options.rules.message" />
-        </a-form-item>
-
         <a-form-item label="最小长度">
           <a-input v-model:value.number="data.options.rules.min" />
         </a-form-item>
 
-        <a-form-item label="正则表达式">
-          <a-input v-model:value="data.options.rules.pattern" />
+        <a-form-item label="正则表达式" v-if="data.options.rules.type === 'regexp'">
+          <a-input v-model:value="data.options.rules.pattern" placeHolder="多个参数以,分割(^abc,i)" />
         </a-form-item>
 
         <a-form-item label="校验类型">

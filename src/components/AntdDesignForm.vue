@@ -43,7 +43,7 @@
 
 
       <a-modal v-model:open="previewVisible" :width="800" :footer="null" title="预览">
-        <AntdGenerateForm ref="generateFormRef" :data="widgetForm" />
+        <AntdGenerateForm ref="generateFormRef" defaultUploadURL="/common/uploadOne" :data="widgetForm" />
       </a-modal>
     </a-layout>
   </div>

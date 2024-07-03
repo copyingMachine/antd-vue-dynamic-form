@@ -103,7 +103,7 @@
     </template>
 
     <template v-if="element.type === 'img-upload'">
-      <a-upload :name="element.options.file" :action="element.options.action || (baseURL + '/common/uploadOne')"
+      <a-upload :name="element.options.file" :action="element.options.action || defaultUploadURL"
         :accept="element.options.accept" :file-list="data" :listType="element.options.listType"
         :multiple="element.options.multiple" :disabled="disabled || element.options.disabled"
         @change="handleUploadChange">
@@ -158,7 +158,7 @@ export default defineComponent({
       type: Object,
       default: () => ({})
     },
-    baseURL: {
+    defaultUploadURL: {
       default: ''
     }
   },

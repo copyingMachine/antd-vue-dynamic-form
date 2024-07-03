@@ -70,19 +70,23 @@ export default defineComponent({
           if (rules) {
             state.rules[model] = JSON.parse(JSON.stringify(rules))
             if (state.rules[model].enum) {
-              state.rules[model].enum = evalFn(state.rules[model].enum)
+              state.rules[model].enum = enumFn(state.rules[model].enum)
             }
 
             if (state.rules[model].pattern) {
-              state.rules[model].pattern = evalFn(state.rules[model].pattern)
+              state.rules[model].pattern = createReg(state.rules[model].pattern)
               state.rules[model].type = 'string'
             }
           }
         }
       }
     }
-    function evalFn(fn) {
-      return new Function('return' + fn)
+    function enumFn(str) {
+      return str && str.split(',')
+    }
+    function createReg(str) {
+      if (!str) return ''
+      return new RegExp(...str.split(','))
     }
 
     const generateOptions = (list) => {
